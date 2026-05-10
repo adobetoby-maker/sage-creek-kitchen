@@ -1,6 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Lato:wght@300;400;700&display=swap');
-
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Lato:wght@300;400;700&display=swap');
 
 @theme {
   --color-sage: #5C7A5C;
@@ -33,6 +32,7 @@
     color: var(--color-charcoal);
     font-weight: 300;
     line-height: 1.6;
+    min-height: 100dvh;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -50,20 +50,4 @@
   .font-lato {
     font-family: var(--font-lato);
   }
-
-  .text-sage { color: var(--color-sage); }
-  .text-sage-dark { color: var(--color-sage-dark); }
-  .text-cream { color: var(--color-cream); }
-  .text-charcoal { color: var(--color-charcoal); }
-  .text-gold { color: var(--color-gold); }
-
-  .bg-sage { background-color: var(--color-sage); }
-  .bg-sage-dark { background-color: var(--color-sage-dark); }
-  .bg-cream { background-color: var(--color-cream); }
-  .bg-charcoal { background-color: var(--color-charcoal); }
-  .bg-gold { background-color: var(--color-gold); }
-
-  .border-sage { border-color: var(--color-sage); }
-  .border-gold { border-color: var(--color-gold); }
-  .border-cream { border-color: var(--color-cream); }
 }
