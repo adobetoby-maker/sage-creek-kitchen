@@ -20,11 +20,9 @@ export async function submitReservation(_prevState: unknown, formData: FormData)
     return { error: 'Please fill in all required fields.' };
   }
 
-  // Validate date is not in the past
-  const today = new Date();
-  today.setHours(0, 0, 0, 0);
-  const selectedDate = new Date(data.date + 'T00:00:00');
-  if (selectedDate < today) {
+  // Validate date is not in the past (string comparison avoids timezone issues)
+  const todayStr = new Date().toISOString().slice(0, 10);
+  if (data.date < todayStr) {
     return { error: 'Please select a date today or in the future.' };
   }
 
@@ -48,8 +46,8 @@ export async function submitReservation(_prevState: unknown, formData: FormData)
       subject: `New Reservation: ${data.guest_name} — ${data.date} at ${data.time}`,
       html: `<p>New reservation:<br/>Name: ${data.guest_name}<br/>Party: ${data.party_size}<br/>Date: ${data.date}<br/>Time: ${data.time}<br/>Phone: ${data.phone}<br/>Email: ${data.email}<br/>Occasion: ${data.occasion || 'None'}<br/>Requests: ${data.special_requests || 'None'}</p>`,
     });
-  } catch {
-    // Email failure is non-blocking
+  } catch (err) {
+    console.error('Resend email failed:', err);
   }
 
   return { success: true, data };

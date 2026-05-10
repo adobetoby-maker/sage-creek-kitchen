@@ -20,11 +20,11 @@ const BRUNCH_TIMES = [
 ];
 
 const OCCASIONS = [
-  'No Special Occasion',
-  'Birthday',
-  'Anniversary',
-  'Date Night',
-  'Business Dinner',
+  { value: '', label: 'No Special Occasion' },
+  { value: 'Birthday', label: 'Birthday' },
+  { value: 'Anniversary', label: 'Anniversary' },
+  { value: 'Date Night', label: 'Date Night' },
+  { value: 'Business Dinner', label: 'Business Dinner' },
 ];
 
 type ActionState = {
@@ -227,7 +227,7 @@ export default function ReservationForm() {
           </label>
           <select id="occasion" name="occasion" className={inputClass}>
             {OCCASIONS.map((o) => (
-              <option key={o} value={o}>{o}</option>
+              <option key={o.value} value={o.value}>{o.label}</option>
             ))}
           </select>
         </div>
