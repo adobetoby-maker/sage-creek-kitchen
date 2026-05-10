@@ -44,9 +44,6 @@ function DinnerTab() {
       <MenuSection title="Mains" items={mains} columns={2} />
       <hr className="border-charcoal/10 mb-12" />
       <MenuSection title="Desserts" items={desserts} columns={2} />
-      <div className="flex justify-center print:hidden">
-        <PrintButton />
-      </div>
     </motion.div>
   );
 }
@@ -95,10 +92,14 @@ export default function MenuTabs() {
       {/* Tab navigation */}
       <div className="sticky top-[64px] z-40 bg-cream border-b border-charcoal/10 print:hidden">
         <div className="max-w-5xl mx-auto px-6">
-          <div className="flex justify-center gap-8">
+          <div role="tablist" aria-label="Menu sections" className="flex justify-center gap-8">
             {tabs.map((tab) => (
               <button
                 key={tab.id}
+                role="tab"
+                aria-selected={activeTab === tab.id}
+                aria-controls={`tabpanel-${tab.id}`}
+                id={`tab-${tab.id}`}
                 onClick={() => setActiveTab(tab.id)}
                 className={`py-4 text-sm tracking-wide transition-colors duration-200 font-lato ${
                   activeTab === tab.id
@@ -114,13 +115,23 @@ export default function MenuTabs() {
       </div>
 
       {/* Tab content */}
-      <section className="max-w-5xl mx-auto px-6 py-16">
+      <section
+        id={`tabpanel-${activeTab}`}
+        role="tabpanel"
+        aria-labelledby={`tab-${activeTab}`}
+        className="max-w-5xl mx-auto px-6 py-16"
+      >
         <AnimatePresence mode="wait">
           {activeTab === 'dinner' && <DinnerTab key="dinner" />}
           {activeTab === 'brunch' && <BrunchTab key="brunch" />}
           {activeTab === 'wine' && <WineTab key="wine" />}
         </AnimatePresence>
       </section>
+
+      {/* Print CTA — visible on all tabs */}
+      <div className="flex justify-center pb-16 print:hidden">
+        <PrintButton />
+      </div>
     </>
   );
 }

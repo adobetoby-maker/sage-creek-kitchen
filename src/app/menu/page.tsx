@@ -15,7 +15,7 @@ export default function MenuPage() {
         <h1 className="font-cormorant text-5xl italic text-charcoal mb-4">Our Menu</h1>
         <p className="text-charcoal/60 font-lato text-base max-w-xl mx-auto px-6 leading-relaxed">
           Our menu changes seasonally to reflect Idaho&apos;s finest ingredients.
-          Menu items marked with ❧ are seasonal.
+          Menu items marked with ❧ are seasonal. Menu changes seasonally — ask your server.
         </p>
         <p className="mt-4 text-[13px] text-charcoal/50 font-lato tracking-wide">
           <span className="inline-flex items-center gap-3">

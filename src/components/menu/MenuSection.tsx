@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import type { MenuItem, WineItem, CocktailItem } from '@/lib/menu';
 import FoodCard from './FoodCard';
 import WineCard from './WineCard';
+import CocktailCard from './CocktailCard';
 
 type SectionItem = MenuItem | WineItem | CocktailItem;
 
@@ -51,23 +52,7 @@ export default function MenuSection({
           if (isFoodItem(item)) {
             return <FoodCard key={item.id} item={item} />;
           }
-          // CocktailItem
-          const cocktail = item as CocktailItem;
-          return (
-            <div key={cocktail.id} className="py-4 border-b border-charcoal/10 last:border-0">
-              <div className="flex items-start justify-between gap-4">
-                <span className="font-cormorant font-semibold text-lg leading-tight">
-                  {cocktail.name}
-                </span>
-                <span className="font-cormorant text-gold font-semibold text-lg flex-shrink-0">
-                  ${cocktail.price}
-                </span>
-              </div>
-              <p className="text-sm text-charcoal/60 font-lato mt-1 leading-relaxed">
-                {cocktail.description}
-              </p>
-            </div>
-          );
+          return <CocktailCard key={item.id} item={item as CocktailItem} />;
         })}
       </div>
     </motion.div>
