@@ -7,12 +7,12 @@ interface FoodCardProps {
 
 export default function FoodCard({ item }: FoodCardProps) {
   return (
-    <div className="py-4 border-b border-charcoal/10 last:border-0">
+    <div className="group py-4 border-b border-charcoal/10 last:border-0">
       <div className="flex items-start justify-between gap-4">
         <div className="flex items-start gap-2 flex-wrap min-w-0">
           <span className="font-cormorant font-semibold text-lg leading-tight">{item.name}</span>
           {item.dietary.length > 0 && (
-            <span className="flex items-center gap-1 flex-shrink-0 mt-0.5">
+            <span className="flex items-center gap-1 flex-shrink-0 mt-0.5 opacity-70 group-hover:opacity-100 transition-opacity duration-200">
               {item.dietary.map((tag) => (
                 <DietaryBadge key={tag} tag={tag} />
               ))}

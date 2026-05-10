@@ -36,6 +36,26 @@
     font-weight: 600;
     line-height: 1.2;
   }
+
+  @keyframes kenBurns {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.08);
+    }
+  }
+
+  input[type="date"] {
+    color-scheme: light;
+    cursor: pointer;
+  }
+
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    opacity: 0.6;
+    cursor: pointer;
+    filter: invert(0.3);
+  }
 }
 
 @layer utilities {
@@ -45,5 +65,9 @@
 
   .font-lato {
     font-family: var(--font-lato);
+  }
+
+  .ken-burns {
+    animation: kenBurns 20s ease-in-out infinite alternate;
   }
 }
