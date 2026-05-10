@@ -42,7 +42,7 @@ export const starters: MenuItem[] = [
 export const mains: MenuItem[] = [
   { id: 'm1', name: 'Pan-Seared Rainbow Trout', description: "Riverence Magic Valley trout, spring pea purée, Kelley's Canyon apricot gastrique, crispy capers", price: 34, dietary: ['gf'], seasonal: true, featured: true },
   { id: 'm2', name: 'Snake River Wagyu Bavette', description: 'American Wagyu beef, fingerling potato confit, heirloom tomato relish, herbed butter', price: 54, dietary: ['gf'], featured: true },
-  { id: 'm3', name: 'Herb-Roasted Half Chicken', description: 'Magic Valley air-chilled chicken, sage jus, roasted root vegetables, grilled lemon', price: 36, dietary: ['gf'] },
+  { id: 'm3', name: 'Herb-Roasted Half Chicken', description: 'Magic Valley air-chilled chicken, sage jus, roasted root vegetables, grilled lemon', price: 36, dietary: ['gf'], featured: true },
   { id: 'm4', name: 'Idaho Sturgeon en Papillote', description: 'Idaho white sturgeon, summer vegetables, lemon-herb broth, focaccia', price: 42, dietary: [], seasonal: true },
   { id: 'm5', name: 'Wild Mushroom Risotto', description: 'Idaho morel and porcini, aged Parmigiano, truffle oil, chives', price: 32, dietary: ['gf', 'v'] },
   { id: 'm6', name: 'Braised Snake River Lamb Shank', description: 'Local lamb, red wine reduction, creamy polenta, gremolata', price: 48, dietary: ['gf'] },

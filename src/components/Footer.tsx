@@ -86,6 +86,7 @@ export default function Footer() {
                   href={siteInfo.social.instagram}
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="Sage Creek Kitchen on Instagram"
                   className="hover:text-gold transition-colors duration-200 uppercase tracking-widest text-xs"
                 >
                   Instagram
@@ -94,6 +95,7 @@ export default function Footer() {
                   href={siteInfo.social.facebook}
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="Sage Creek Kitchen on Facebook"
                   className="hover:text-gold transition-colors duration-200 uppercase tracking-widest text-xs"
                 >
                   Facebook
@@ -105,7 +107,7 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="border-t border-cream/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-cream/40">
-          <p>&copy; 2024 Sage Creek Kitchen. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Sage Creek Kitchen. All rights reserved.</p>
           <Link href="/privacy" className="hover:text-gold transition-colors duration-200">
             Privacy Policy
           </Link>

@@ -24,6 +24,7 @@ export default function Nav() {
 
   return (
     <header
+      aria-label="Site navigation"
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled ? 'bg-cream/95 backdrop-blur-sm shadow-sm' : 'bg-transparent'
       }`}
@@ -39,7 +40,7 @@ export default function Nav() {
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden lg:flex items-center gap-8">
+        <nav aria-label="Primary navigation" className="hidden lg:flex items-center gap-8">
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -68,6 +69,7 @@ export default function Nav() {
           className={`lg:hidden flex flex-col gap-1.5 p-1 ${scrolled ? 'text-charcoal' : 'text-cream'}`}
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
+          aria-expanded={mobileOpen}
         >
           <span
             className={`block w-6 h-0.5 bg-current transition-transform duration-300 ${
@@ -93,7 +95,7 @@ export default function Nav() {
           mobileOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
         }`}
       >
-        <nav className="flex flex-col px-6 py-4 gap-4">
+        <nav aria-label="Mobile navigation" className="flex flex-col px-6 py-4 gap-4">
           {navLinks.map((link) => (
             <Link
               key={link.href}

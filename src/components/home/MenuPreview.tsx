@@ -4,11 +4,10 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { starters, mains } from '@/lib/menu';
 
-// Pick 3 starters + 3 mains for preview
 const previewItems = [
   ...starters.slice(0, 3),
   ...mains.filter((m) => m.featured).slice(0, 2),
-  mains[4],
+  mains.find((m) => m.id === 'm5')!,
 ].slice(0, 6);
 
 export default function MenuPreview() {
